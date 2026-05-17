@@ -1,0 +1,64 @@
+name: ovarian_dl_resistance
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.10
+  - r-base=4.3
+  - pip=23.0
+  
+  # Core Data Science
+  - numpy=1.24
+  - pandas=2.0
+  - scipy=1.11
+  - scikit-learn=1.3
+  
+  # Single Cell & Deep Learning
+  - scanpy=1.9
+  - scvi-tools=1.0
+  - pytorch=2.0
+  - pytorch-lightning=2.0
+  
+  # Visualization
+  - matplotlib=3.7
+  - seaborn=0.12
+  - plotly=5.15
+  - statannot=0.2
+  
+  # Bioinformatics
+  - bioconductor-gseapy
+  - bioconductor-clusterprofiler
+  - bioconductor-org.hs.eg.db
+  - bioconductor-survival
+  - bioconductor-survminer
+  - lifelines
+  
+  # R Packages
+  - r-data.table
+  - r-ggplot2
+  - r-cowplot
+  - r-patchwork
+  - r-ggrepel
+  - r-viridis
+  - r-pheatmap
+  - r-complexheatmap
+  - r-survival
+  - r-survminer
+  - r-ggpubr
+  - r-dendextend
+  - r-circlize
+  
+  # Utilities
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - pyyaml
+  - tqdm
+  - joblib
+  
+  - pip:
+    - adjusttext==0.8
+    - matplotlib-venn==0.11
+    - pyupset==0.3
+    - bioinfokit==0.9
