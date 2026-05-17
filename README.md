@@ -18,7 +18,7 @@ We do not redistribute the raw data. Download from GEO directly. Cell-level meta
 ## Pipeline order
 
 ```
-00\_convert\_gene\_ids.py              # Ensembl → HGNC symbols
+00\_generate_stats.py                  # Preprocess data visualization
 01\_preprocess\_and\_qc.py             # QC, HVG selection (3,000 genes)
 02a\_train\_linearscvi\_SAVEFIX.py     # LinearSCVI training
 02b\_train\_autoencoder\_SAVEFIX.py    # Standard autoencoder training
