@@ -1,0 +1,64 @@
+# Ovarian Cancer Deep Learning Resistance Project
+# Configuration for reproducibility
+
+# Paths
+paths:
+  input_h5ad: "ovarian_DL_latent_atlas.h5ad"
+  output_dir: "results"
+  figures_dir: "figures"
+  supplementary_dir: "supplementary"
+  
+# Model Parameters
+model:
+  n_latent: 20
+  n_epochs: 100
+  batch_key: "patient_ID"
+  early_stopping: true
+  patience: 10
+  
+# Benchmarking
+benchmark:
+  n_cells_sample: 15000
+  test_size: 0.3
+  n_stability_runs: 10
+  random_seeds: [42, 123, 456, 789, 101, 202, 303, 404, 505, 606]
+  models:
+    - RF
+    - SVM
+    - LASSO
+  spaces:
+    - LDVAE_Latent
+    - PCA_Linear
+    - Gene_Expression
+    
+# Pathway Analysis
+pathway:
+  gene_sets:
+    - KEGG_2021_Human
+    - GO_Biological_Process_2021
+    - Reactome_2022
+    - Hallmark
+  min_genes: 5
+  max_genes: 500
+  fdr_cutoff: 0.05
+  top_n: 20
+  
+# Survival Analysis
+survival:
+  time_column: "PFI_days"
+  event_column: "progression_event"
+  n_dimensions: 20
+  cutoff_method: "median"  # or "optimal", "quartile"
+  
+# Visualization
+figures:
+  dpi: 600
+  format: "tiff"  # Nature prefers TIFF
+  color_palette:
+    LDVAE_Latent: "#E41A1C"
+    PCA_Linear: "#377EB8"
+    Gene_Expression: "#4DAF4A"
+    short_PFI: "#D62728"
+    long_PFI: "#1F77B4"
+  font_family: "Arial"
+  font_size: 12
