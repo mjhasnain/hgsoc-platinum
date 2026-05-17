@@ -19,7 +19,7 @@ We do not redistribute the raw data. Download from GEO directly. Cell-level meta
 
 ```
 00\_generate_stats.py                  # Preprocess data visualization
-01\_preprocess\_and\_qc.py             # QC, HVG selection (3,000 genes)
+01\_preprocess\_and\_qc.R              # QC, HVG selection (3,000 genes)
 02a\_train\_linearscvi\_SAVEFIX.py     # LinearSCVI training
 02b\_train\_autoencoder\_SAVEFIX.py    # Standard autoencoder training
 02c\_train\_vae\_WORKING.py            # VAE training
